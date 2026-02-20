@@ -34,7 +34,7 @@ export function Footer() {
 
                     {/* Column 2: Services */}
                     <div>
-                        <h3 className="font-bold text-lg mb-6">Our Services</h3>
+                        <h3 className="font-bold text-lg mb-6 text-white">Our Services</h3>
                         <ul className="flex flex-col gap-3 text-sm text-white/80">
                             <li><Link href="/pool-liner-installation" className="hover:text-accent transition-colors">Pool Liner Installation</Link></li>
                             <li><Link href="/pool-liner-replacement" className="hover:text-accent transition-colors">Pool Liner Replacement</Link></li>
@@ -47,7 +47,7 @@ export function Footer() {
 
                     {/* Column 3: Areas We Cover */}
                     <div>
-                        <h3 className="font-bold text-lg mb-6">Areas We Cover</h3>
+                        <h3 className="font-bold text-lg mb-6 text-white">Areas We Cover</h3>
                         <ul className="flex flex-col gap-3 text-sm text-white/80">
                             <li><Link href="/areas/hampshire" className="hover:text-accent transition-colors">Hampshire</Link></li>
                             <li><Link href="/areas/surrey" className="hover:text-accent transition-colors">Surrey</Link></li>
@@ -60,7 +60,7 @@ export function Footer() {
 
                     {/* Column 4: Contact Info */}
                     <div>
-                        <h3 className="font-bold text-lg mb-6">Contact Us</h3>
+                        <h3 className="font-bold text-lg mb-6 text-white">Contact Us</h3>
                         <ul className="flex flex-col gap-4 text-sm text-white/80">
                             <li className="flex items-start gap-3">
                                 <Phone className="w-5 h-5 text-accent shrink-0 mt-0.5" />
