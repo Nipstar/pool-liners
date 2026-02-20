@@ -248,14 +248,14 @@ export default function Home() {
           </div>
           <div className="relative h-[400px] bg-gray-100 rounded-2xl shadow-xl overflow-hidden border border-gray-100 group">
             <iframe
-              src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=Romsey,%20Hampshire,%20UK+(Bespoke%20Pool%20Liners)&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=Romsey,%20Hampshire,%20UK+(Bespoke%20Pool%20Liners)&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=near&amp;output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+              className="absolute inset-0 w-full h-full"
               title="Map showing Romsey, Hampshire"
             />
             {/* Overlay floating card */}
