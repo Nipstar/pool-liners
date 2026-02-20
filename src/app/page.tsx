@@ -246,14 +246,29 @@ export default function Home() {
 
             <Button href="/areas" variant="primary" withArrow>View All Areas</Button>
           </div>
-          <div className="relative h-[400px] bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex items-center justify-center p-8">
-            {/* Map placeholder - could integrate Google Maps embed later */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8" />
+          <div className="relative h-[400px] bg-gray-100 rounded-2xl shadow-xl overflow-hidden border border-gray-100 group">
+            <iframe
+              src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=Romsey,%20Hampshire,%20UK+(Bespoke%20Pool%20Liners)&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+              title="Map showing Romsey, Hampshire"
+            />
+            {/* Overlay floating card */}
+            <div className="absolute top-6 left-6 pointer-events-none">
+              <div className="bg-white/95 backdrop-blur-md px-5 py-4 rounded-xl shadow-lg border border-white/20 flex items-center gap-4 transition-transform duration-500 group-hover:-translate-y-1">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-dark-text tracking-tight">Based in Romsey</h3>
+                  <p className="text-body-text text-sm">Serving the South of England</p>
+                </div>
               </div>
-              <h3 className="font-bold text-xl text-dark-text mb-2">Based in Romsey</h3>
-              <p className="text-body-text text-sm">Serving the South of England</p>
             </div>
           </div>
         </div>
