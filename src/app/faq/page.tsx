@@ -5,6 +5,7 @@ import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { ChevronDown, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { FAQSchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 
 const FAQS = [
     {
@@ -43,8 +44,21 @@ export default function FAQPage() {
         setOpenIndex(openIndex === id ? null : id);
     };
 
+    // Flatten FAQs for schema
+    const allFAQs = FAQS.flatMap(category =>
+        category.items.map(faq => ({
+            question: faq.q,
+            answer: faq.a
+        }))
+    );
+
     return (
         <>
+            <FAQSchema faqs={allFAQs} />
+            <BreadcrumbSchema items={[
+                { name: 'Home', url: '/' },
+                { name: 'FAQ', url: '/faq' }
+            ]} />
             <Section bg="primary" className="pt-32 pb-20 md:pt-40 md:pb-24  relative overflow-hidden text-white">
                 <div className="absolute inset-0 z-0 bg-primary">
                     <Image

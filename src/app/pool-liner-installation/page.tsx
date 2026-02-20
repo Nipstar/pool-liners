@@ -1,18 +1,26 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { CheckCircle2, Navigation } from 'lucide-react';
+import { generateMetadata as genMeta, PAGE_METADATA } from '@/lib/metadata';
+import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 
-export const metadata: Metadata = {
-    title: 'Pool Liner Installation Hampshire | Bespoke Fit, 10-Year Guarantee',
-    description: 'Professional swimming pool liner installation across Hampshire. On-site welded Renolit reinforced liners fitted to any pool shape. 10-year watertight guarantee. Free survey.',
-};
+export const metadata = genMeta(PAGE_METADATA.poolLinerInstallation);
 
 export default function PoolLinerInstallationPage() {
     return (
         <>
+            <ServiceSchema
+                name="Pool Liner Installation"
+                description="Professional swimming pool liner installation across Hampshire. On-site welded Renolit reinforced liners fitted to any pool shape."
+                url="/pool-liner-installation"
+            />
+            <BreadcrumbSchema items={[
+                { name: 'Home', url: '/' },
+                { name: 'Pool Liner Installation', url: '/pool-liner-installation' }
+            ]} />
+
             <Section bg="primary" className="pt-32 pb-20 md:pt-40 md:pb-32  relative overflow-hidden text-white">
                 <div className="absolute inset-0 z-0">
                     <Image

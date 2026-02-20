@@ -1,8 +1,30 @@
 "use server"
 
-export async function submitContactForm(payload: any) {
+export interface ContactFormData {
+    name: string;
+    email: string;
+    phone: string;
+    postcode: string;
+    service: string;
+    poolType?: string;
+    message?: string;
+    source: string;
+    page: string;
+}
+
+export interface ContactFormResult {
+    success: boolean;
+    error?: string;
+}
+
+export async function submitContactForm(payload: ContactFormData): Promise<ContactFormResult> {
     try {
-        const res = await fetch('https://antekauto.app.n8n.cloud/webhook/c20f44a3-1bf1-4ea0-9bcc-62875d389a4b', {
+        const webhookUrl = process.env.NEXT_PUBLIC_WEBHOOK_URL;
+        if (!webhookUrl) {
+            throw new Error('Webhook URL not configured');
+        }
+
+        const res = await fetch(webhookUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

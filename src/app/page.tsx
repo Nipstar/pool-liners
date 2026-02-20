@@ -4,10 +4,16 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
 import { Wrench, RefreshCw, ShieldCheck, Layers, Package, Zap, CheckCircle2, MapPin, Award, Star } from 'lucide-react';
+import { generateMetadata as genMeta, PAGE_METADATA } from '@/lib/metadata';
+import { LocalBusinessSchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
+
+export const metadata = genMeta(PAGE_METADATA.home);
 
 export default function Home() {
   return (
     <>
+      <LocalBusinessSchema />
+      <BreadcrumbSchema items={[{ name: 'Home', url: '/' }]} />
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
         {/* Background Image & Overlay */}

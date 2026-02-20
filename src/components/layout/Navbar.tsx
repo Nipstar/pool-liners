@@ -4,28 +4,8 @@ import Link from 'next/link';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const NAV_LINKS = [
-    { name: 'Home', href: '/' },
-    {
-        name: 'Services',
-        href: '#',
-        dropdown: [
-            { name: 'Pool Liner Installation', href: '/pool-liner-installation' },
-            { name: 'Pool Liner Replacement', href: '/pool-liner-replacement' },
-            { name: 'Pool Liner Repair', href: '/pool-liner-repair' },
-            { name: 'Reinforced Pool Liners', href: '/reinforced-pool-liners' },
-            { name: 'Bagged Pool Liners', href: '/bagged-pool-liners' },
-            { name: 'On-Site Welding', href: '/on-site-pool-liner-welding' },
-        ]
-    },
-    { name: 'Colours', href: '/pool-liner-colours' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'About', href: '/about-us' },
-    { name: 'Areas We Cover', href: '/areas' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'FAQ', href: '/faq' },
-];
+import { NAV_LINKS } from '@/constants/navigation';
+import { CONTACT_INFO } from '@/constants/contact';
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +19,29 @@ export function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [mobileMenuOpen]);
+
+    // Close menu on escape key
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && mobileMenuOpen) {
+                setMobileMenuOpen(false);
+            }
+        };
+        window.addEventListener('keydown', handleEscape);
+        return () => window.removeEventListener('keydown', handleEscape);
+    }, [mobileMenuOpen]);
 
     return (
         <header
@@ -126,7 +129,7 @@ export function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-0 z-40 bg-white pt-24 px-4 pb-8 overflow-y-auto"
+                        className="fixed inset-0 z-[60] bg-white pt-24 px-4 pb-8 overflow-y-auto"
                     >
                         <div className="flex flex-col gap-6">
                             {NAV_LINKS.map((link) => (
@@ -175,11 +178,11 @@ export function Navbar() {
                             ))}
 
                             <div className="pt-6 border-t border-gray-100 flex flex-col gap-4 mt-4">
-                                <a href="tel:07442986034" className="flex items-center gap-3 text-primary font-medium">
+                                <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-3 text-primary font-medium">
                                     <span className="w-10 h-10 rounded-full bg-light-bg flex items-center justify-center">
                                         <Phone className="w-5 h-5" />
                                     </span>
-                                    07442 986034
+                                    {CONTACT_INFO.phone}
                                 </a>
                                 <Link
                                     href="/contact"
