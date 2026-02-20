@@ -18,7 +18,7 @@ export default function OnSiteWeldingPage() {
                         src="/images/welding.png"
                         alt="On-site pool liner hot air welding"
                         fill
-                        className="object-cover object-center opacity-30 mix-blend-overlay"
+                        className="object-cover object-center opacity-20"
                     />
                 </div>
                 <div className="container relative z-10 max-w-4xl text-center mx-auto">

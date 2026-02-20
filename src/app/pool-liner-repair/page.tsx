@@ -19,7 +19,7 @@ export default function PoolLinerRepairPage() {
                         src="/images/portfolio-3.png"
                         alt="Pool liner repair"
                         fill
-                        className="object-cover object-center opacity-30 mix-blend-overlay"
+                        className="object-cover object-center opacity-20"
                     />
                 </div>
                 <div className="container relative z-10 max-w-3xl mx-auto text-center">

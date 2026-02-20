@@ -48,7 +48,7 @@ export default function AreasIndexPage() {
                         src="/images/portfolio-2.png"
                         alt="Swimming pool regions"
                         fill
-                        className="object-cover object-center opacity-30 mix-blend-overlay"
+                        className="object-cover object-center opacity-20"
                     />
                 </div>
                 <div className="container relative z-10 max-w-4xl text-center mx-auto">

@@ -28,7 +28,7 @@ export default function TestimonialsPage() {
                         src="/images/hero.png"
                         alt="Customer testimonials"
                         fill
-                        className="object-cover object-[center_30%] opacity-30 mix-blend-overlay"
+                        className="object-cover object-[center_30%] opacity-20"
                     />
                 </div>
                 <div className="container relative z-10 max-w-4xl text-center mx-auto">

@@ -18,7 +18,7 @@ export default function AboutUsPage() {
                         src="/images/hero.png"
                         alt="Bespoke Pool Liners Team"
                         fill
-                        className="object-cover object-center opacity-30 mix-blend-overlay"
+                        className="object-cover object-center opacity-20"
                     />
                 </div>
                 <div className="container relative z-10 max-w-4xl text-center mx-auto">

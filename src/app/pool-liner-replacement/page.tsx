@@ -19,7 +19,7 @@ export default function PoolLinerReplacementPage() {
                         src="/images/hero.png"
                         alt="Pool liner replacement"
                         fill
-                        className="object-cover object-center opacity-30 mix-blend-overlay"
+                        className="object-cover object-center opacity-20"
                     />
                 </div>
 

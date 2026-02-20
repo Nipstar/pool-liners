@@ -19,7 +19,7 @@ export default function PoolLinerInstallationPage() {
                         src="/images/hero.png" // Fallback to hero if specific image is unavailable
                         alt="Pool liner installation"
                         fill
-                        className="object-cover opacity-30 mix-blend-overlay"
+                        className="object-cover opacity-20"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent" />
                 </div>

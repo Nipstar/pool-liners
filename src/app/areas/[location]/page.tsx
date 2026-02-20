@@ -33,7 +33,7 @@ export default async function AreaTemplatePage({ params }: Props) {
                         src="/images/hero.png"
                         alt={`Swimming pools in ${loc}`}
                         fill
-                        className="object-cover object-center opacity-30 mix-blend-overlay"
+                        className="object-cover object-center opacity-20"
                     />
                 </div>
 
