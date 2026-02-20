@@ -258,18 +258,6 @@ export default function Home() {
               className="absolute inset-0 w-full h-full"
               title="Map showing Romsey, Hampshire"
             />
-            {/* Overlay floating card */}
-            <div className="absolute top-6 left-6 pointer-events-none">
-              <div className="bg-white/95 backdrop-blur-md px-5 py-4 rounded-xl shadow-lg border border-white/20 flex items-center gap-4 transition-transform duration-500 group-hover:-translate-y-1">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-dark-text tracking-tight">Based in Romsey</h3>
-                  <p className="text-body-text text-sm">Serving the South of England</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </Section>
